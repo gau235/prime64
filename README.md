@@ -67,7 +67,7 @@ java -cp ./*; -jar prime64Lgpl3_0619.jar zoom=1.3
 		width="350px"
 		border="0" /> 
 <br/>
-## Rec tab: <br/>
+### Rec tab: <br/>
 <img
 		src="http://c64.tw/r20/main/image/prime64UI_Rec.png"
 		width="350px"
