@@ -43,26 +43,31 @@ java -cp ./*; -jar prime64Lgpl3_0619.jar zoom=1.3
 
 
 # User Interface
+MinePrime tab: <br/>
 <img
 		src="http://c64.tw/r20/main/image/prime64UI_MP.png"
 		width="350px"
 		border="0" /> 
 <br/>
+EtchPrime tab: <br/>
 <img
 		src="http://c64.tw/r20/main/image/prime64UI_EP.png"
 		width="350px"
 		border="0" /> 
 <br/>
+DIY tab: <br/>
 <img
 		src="http://c64.tw/r20/main/image/prime64UI_DIY.png"
 		width="350px"
 		border="0" /> 
 <br/>
+Conf tab: <br/>
 <img
 		src="http://c64.tw/r20/main/image/prime64UI_Conf.png"
 		width="350px"
 		border="0" /> 
 <br/>
+Rec tab: <br/>
 <img
 		src="http://c64.tw/r20/main/image/prime64UI_Rec.png"
 		width="350px"
