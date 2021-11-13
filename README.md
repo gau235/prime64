@@ -42,6 +42,9 @@ java -cp ./\*; -jar prime64Lgpl3_0619.jar<br/>
 or try this:<br/>
 java -cp ./\*; -jar prime64Lgpl3_0619.jar zoom=1.3
 
+additional try this:<br/>
+set path=C:/jdk7/bin;
+start javaw -cp ./\*; lgpl3.recycle.Zw99_ScreenCapture
 
 # User Interface
 ### MinePrime tab: <br/>
