@@ -37,10 +37,10 @@ go with MinePrime from 1 to the number 3 billion:<br/>
 
 # Windows command line
 set Path=C:\jdk7\bin;<br/>
-java -cp ./*; -jar prime64Lgpl3_0619.jar<br/>
+java -cp ./\*; -jar prime64Lgpl3_0619.jar<br/>
 <br/>
 or try this:<br/>
-java -cp ./*; -jar prime64Lgpl3_0619.jar zoom=1.3
+java -cp ./\*; -jar prime64Lgpl3_0619.jar zoom=1.3
 
 
 # User Interface
