@@ -36,14 +36,14 @@ go with MinePrime from 1 to the number 3 billion:<br/>
 10 核心的测试, 花费约 590 秒<br/>
 
 # Windows command line
-set Path=C:\jdk7\bin;<br/>
+set Path=C:\java7\bin<br/>
 java -cp ./\*; -jar prime64Lgpl3_0619.jar<br/>
 <br/>
 or try this:<br/>
 java -cp ./\*; -jar prime64Lgpl3_0619.jar zoom=1.3
 
 additional try this:<br/>
-set path=C:/jdk7/bin;
+set path=C:/java7/bin<br/>
 start javaw -cp ./\*; lgpl3.recycle.Zw99_ScreenCapture
 
 # User Interface
