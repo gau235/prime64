@@ -71,7 +71,7 @@ start javaw -cp ./\*; lgpl3.recycle.Zw99_ScreenCapture
 		width="350px"
 		border="0" /> 
 <br/>
-### Rec tab: <br/>
+### Rec tab (100 times): <br/>
 <img
 		src="http://c64.tw/r20/main/image/prime64UI_Rec.png"
 		width="350px"
