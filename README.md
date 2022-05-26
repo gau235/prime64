@@ -1,4 +1,4 @@
-## 为 COVID-19 疫情祈祷
+## 大家为 COVID-19 疫情祈祷
 # Two algorithms to find primes
 MinePrime: the traditional algorithm to find primes.<br/>
 EtchPrime: a new algorithm to find primes.
