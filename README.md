@@ -7,13 +7,9 @@ EtchPrime: a new algorithm to find primes.
 then practically the new algorithm has better performance than the traditional algorithm as 100 times faster.
 
 # Download
-(下载时请另开新视窗后按 Enter, 抱歉这是无奈)<br/>
-<a href="http://c64.tw/d2.jsp" target="_blank" > Download portable version </a><br/>		
-<a href="http://c64.tw/w20/o/viewOpenSrc.jsp" target="_blank" > src </a><br/>
-<a href="http://c64.tw/w20/prime64Lgpl/prime64Lgpl3DiyPortable.zip" target="_blank" > Download DIY portable version </a><br/>
-<a href="http://c64.tw/w20/prime64Lgpl/java7MacIntel.gz" target="_blank" > Download for Mac Intel </a>
+https://github.com/gau235/prime64/releases/download/free_winX86/prime64Lgpl3Portable.zip<br/>
+(下载时请另开新视窗后按 Enter, 抱歉这是无奈)
 <br/>
-<a href="https://www.azul.com/downloads/zulu-community/?version=java-11-lts&os=macos&architecture=x86-64-bit&package=jre" target="_blank" > Java Zulu </a>
 <br/>
 <img
 		src="http://c64.tw/r20/main/image/prime64UI.png"
