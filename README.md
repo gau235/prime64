@@ -11,8 +11,6 @@ then practically the new algorithm has better performance than the traditional a
 <a href="http://c64.tw/d2.jsp" target="_blank" > Download portable version </a><br/>		
 (https://github.com/gau235/prime64/releases/download/free_winX86/prime64Lgpl3Portable.zip)
 <br/>
-<a href="https://www.azul.com/downloads/zulu-community/?version=java-11-lts&os=macos&architecture=x86-64-bit&package=jre" target="_blank" > Java Zulu </a>
-<br/>
 <img
 		src="http://c64.tw/r20/main/image/prime64UI.png"
 		width="350px"
