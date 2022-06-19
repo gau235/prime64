@@ -10,6 +10,7 @@ then practically the new algorithm has better performance than the traditional a
 (下载时请另开新视窗后按 Enter, 抱歉这是无奈)<br/>	
 (https://github.com/gau235/prime64/releases/download/free_winX86/prime64Lgpl3Portable.zip)
 <br/>
+<br/>
 <img
 		src="http://c64.tw/r20/main/image/prime64UI.png"
 		width="350px"
