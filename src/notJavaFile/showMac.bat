@@ -1,3 +1,0 @@
-ipconfig
-getMac
-pause
