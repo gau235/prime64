@@ -1,0 +1,51 @@
+<!DOCTYPE project>
+<!-- 2017/05/24_09:59:00 -->
+<project name="toUnzip" basedir="." default="end">
+
+	<target name="init">
+
+		<property name="rootDir" location="C:/e44/w/w20" />
+		<property name="tmpDir" location="C:/tmp" />
+		<property file="C:/password.txt" />
+
+
+		<tstamp>
+			<format property="myTime" pattern="yyyyMMdd_HHmmss" />
+		</tstamp>
+
+
+	</target>
+
+	<target name="end" depends="init ">
+
+		<echo message="unzip" />
+		<get src="http://c64.tw/w20/o/unzip.jsp" dest="${tmpDir}" />
+
+		<echo message="insertDataOfSrcIntoDb" />
+		<get src="http://c64.tw/w20/o/insertDataOfSrcIntoDb.jsp" dest="${tmpDir}" />
+
+		<!--
+		<ftp action="del" server="c64.tw" verbose="yes" depends="yes" passive="yes" userid="c642584" password="${password}" remotedir="/test">
+
+			<fileset>
+
+				<include name="*/**" />
+
+			</fileset>
+
+		</ftp>
+
+		<ftp action="rmdir" server="c64.tw" verbose="yes" depends="yes" passive="yes" userid="c642584" password="${password}" remotedir="/test">
+
+			<fileset>
+
+				<include name="*/**" />
+
+			</fileset>
+
+		</ftp>
+		
+		-->
+	</target>
+
+</project>

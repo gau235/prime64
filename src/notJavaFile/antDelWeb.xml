@@ -1,0 +1,46 @@
+<!DOCTYPE project>
+<!-- 2019/02/08_21:00:00 -->
+<project name="delWeb" basedir="." default="end">
+
+	<target name="init">
+
+		<property name="rootDir" location="C:/e44/w/w20" />
+		<property name="tmpDir" location="C:/tmp" />
+		<property file="C:/password.txt" />
+
+		<tstamp>
+			<format property="myTime" pattern="yyyyMMdd_HHmmss" />
+		</tstamp>
+
+	</target>
+
+	<target name="end" depends="init ">
+		<!--
+		<echo message="unzip" />
+		
+		<get src="http://c64.tw/w20/o/unzip.jsp" dest="${tmpDir}" />
+		-->
+		<!---->
+		<ftp action="del" server="c64.tw" verbose="yes" depends="yes" passive="yes" userid="c642584" password="${password}" remotedir="/w20">
+
+			<fileset>
+
+				<include name="prime64Lgpl/srcTxtNDoc/**" />
+
+			</fileset>
+
+		</ftp>
+
+		<ftp action="rmdir" server="c64.tw" verbose="yes" depends="yes" passive="yes" userid="c642584" password="${password}" remotedir="/w20">
+
+			<fileset>
+
+				<include name="prime64Lgpl/srcTxtNDoc/**" />
+
+			</fileset>
+
+		</ftp>
+
+	</target>
+
+</project>

@@ -1,0 +1,204 @@
+<!DOCTYPE project>
+<!-- 2020/04/06_12:50:00 -->
+<project name="buildJar" basedir="." default="end">
+
+	<target name="init">
+
+		<property name="rootDir" location="C:/e412/w/w20" />
+		<property name="tmpDir" location="C:/tmp" />
+		<property file="C:/password.txt" />
+
+		<property name="dirPrime64Lgpl" location="${tmpDir}/prime64Lgpl" />
+		<property name="dirSrcTxtNDoc" location="${tmpDir}/srcTxtNDoc" />
+
+		<tstamp>
+			<format property="myTime" pattern="yyyy/MM/dd_HH:mm:ss" />
+			<format property="myMMdd" pattern="MMdd" />
+		</tstamp>
+
+		<echo message="myTime=${myTime}" />
+
+		<delete includeemptydirs="true">
+			<fileset dir="${tmpDir}" includes="**/*" />
+		</delete>
+
+	</target>
+
+	<target name="setUpdatedTime">
+
+		<!--adjust-->
+		<copy file="${rootDir}/src/lgpl3/o/B.java" tofile="${tmpDir}/B.java" />
+		<copy file="${rootDir}/src/lgpl3/o/O.java" tofile="${tmpDir}/O.java" />
+
+		<copy file="${rootDir}/src/lgpl3/other/jsp/Jsp_D.java" tofile="${tmpDir}/Jsp_D.java" />
+		<copy file="${rootDir}/src/lgpl3/other/sample/Ex989_ScanHttpPage.java" tofile="${tmpDir}/Ex989_ScanHttpPage.java" />
+
+		<java classname="lgpl3.other.sample.Ex994_ReplaceTimestamp" failonerror="true" fork="false">
+
+			<classpath>
+				<pathelement location="C:/e412/w/w20/build/classes" />
+			</classpath>
+
+		</java>
+
+		<copy file="${tmpDir}/B.java" tofile="${dirPrime64Lgpl}/src/lgpl3/o/B.java" />
+		<copy file="${tmpDir}/O.java" tofile="${dirPrime64Lgpl}/src/lgpl3/o/O.java" />
+
+		<copy file="${tmpDir}/Jsp_D.java" tofile="${dirPrime64Lgpl}/src/lgpl3/other/jsp/Jsp_D.java" />
+		<copy file="${tmpDir}/Ex989_ScanHttpPage.java" tofile="${dirPrime64Lgpl}/src/lgpl3/other/sample/Ex989_ScanHttpPage.java" />
+
+	</target>
+
+	<target name="moveFileForToCompile">
+
+		<copy todir="${dirPrime64Lgpl}/src">
+
+			<fileset dir="${rootDir}/src" casesensitive="yes">
+
+				<exclude name="**/*GMail*.java" />
+
+			</fileset>
+
+		</copy>
+
+	</target>
+
+	<target name="compileNJar">
+
+		<mkdir dir="${dirPrime64Lgpl}/allClass" />
+
+		<javac optimize="on" includeantruntime="true" srcdir="${dirPrime64Lgpl}/src" destdir="${dirPrime64Lgpl}/allClass" encoding="UTF-8" debug="true" fork="true" executable="C:/jdk7/bin/javac" compiler="javac1.7" source="1.7" target="1.7">
+
+			<compilerarg value="-Xlint:unchecked" />
+
+		</javac>
+
+		<jar destfile="${dirPrime64Lgpl}/prime64Lgpl3.jar">
+
+			<manifest>
+
+				<attribute name="Main-Class" value="lgpl3.other.uI.Main" />
+				<attribute name="Updated" value="${myTime}" />
+
+			</manifest>
+
+			<fileset dir="${dirPrime64Lgpl}/allClass">
+
+				<include name="lgpl3/**" />
+
+			</fileset>
+
+		</jar>
+
+		<!--fuck-->
+		<copy file="${dirPrime64Lgpl}/prime64Lgpl3.jar" tofile="${tmpDir}/prime64Lgpl3.jar" />
+		<copy file="${dirPrime64Lgpl}/prime64Lgpl3.jar" tofile="C:/Users/gau/Desktop/prime64Lgpl3_${myMMdd}.jar" />
+		<copy file="${dirPrime64Lgpl}/prime64Lgpl3.jar" tofile="C:/e412/prime64Lgpl3.jar" />
+
+	</target>
+
+	<target name="toTest">
+
+		<java classname="lgpl3.other.sample.Ex902_TestOnMinePrime" failonerror="true" fork="true">
+
+			<classpath>
+				<pathelement location="${tmpDir}/prime64Lgpl3.jar" />
+			</classpath>
+
+		</java>
+
+		<java classname="lgpl3.other.sample.Ex905_TestOnMarkPrime" failonerror="true" fork="true">
+
+			<classpath>
+				<pathelement location="${tmpDir}/prime64Lgpl3.jar" />
+			</classpath>
+
+		</java>
+
+		<java classname="lgpl3.other.sample.Ex908_TestOnFraction" failonerror="true" fork="true">
+
+			<classpath>
+				<pathelement location="${tmpDir}/prime64Lgpl3.jar" />
+			</classpath>
+
+		</java>
+
+		<java classname="lgpl3.comb.stirlingN.sample.Ex95_TestOnStirling" failonerror="true" fork="true">
+
+			<classpath>
+				<pathelement location="${tmpDir}/prime64Lgpl3.jar" />
+			</classpath>
+
+		</java>
+
+		<java classname="lgpl3.comb.wDup.PWDup" failonerror="true" fork="true">
+
+			<classpath>
+				<pathelement location="${tmpDir}/prime64Lgpl3.jar" />
+			</classpath>
+
+		</java>
+
+		<java classname="lgpl3.other.sample.Ex888_SearchSrc" failonerror="true" fork="true">
+
+			<classpath>
+				<pathelement location="${tmpDir}/prime64Lgpl3.jar" />
+			</classpath>
+
+		</java>
+
+	</target>
+
+	<target name="toJavaDoc">
+
+		<echo message="del Jsp_D" />
+		<delete file="${dirPrime64Lgpl}/src/lgpl3/other/jsp/Jsp_D.java" />
+		<copy file="${rootDir}/src/lgpl3/other/jsp/Jsp_D.java" tofile="${dirPrime64Lgpl}/src/lgpl3/other/jsp/Jsp_D.java" />
+
+		<exec executable="C:/e412/w/w20/src/notJavaFile/toJ7doc.bat">
+			<arg value="start" />
+
+		</exec>
+
+	</target>
+
+
+	<target name="moveFile">
+
+		<!---->
+		<delete dir="${dirPrime64Lgpl}/allClass" />
+
+		<copy todir="${dirPrime64Lgpl}/doc">
+
+			<fileset dir="${dirSrcTxtNDoc}/doc" casesensitive="yes">
+			</fileset>
+
+		</copy>
+
+		<copy todir="${dirSrcTxtNDoc}/src">
+
+			<fileset dir="${dirPrime64Lgpl}/src" casesensitive="yes">
+
+				<include name="**/*.java" />
+
+			</fileset>
+
+			<globmapper from="*.java" to="*.txt" />
+
+		</copy>
+
+		<copy file="${rootDir}/src/notJavaFile/DIY.bat" tofile="${dirPrime64Lgpl}/DIY.bat" />
+
+		<copy file="${rootDir}/src/notJavaFile/COPYING3.txt" tofile="${dirPrime64Lgpl}/COPYING3.txt" />
+		<copy file="${rootDir}/src/notJavaFile/COPYING3.lib.txt" tofile="${dirPrime64Lgpl}/COPYING3.lib.txt" />
+		<copy file="${rootDir}/src/notJavaFile/README.txt" tofile="${dirPrime64Lgpl}/README.txt" />
+
+
+	</target>
+
+	<!-- -->
+	<target name="end" depends="init, setUpdatedTime, moveFileForToCompile, compileNJar, toTest, toJavaDoc, moveFile">
+
+	</target>
+
+</project>
