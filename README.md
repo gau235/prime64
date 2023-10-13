@@ -12,10 +12,9 @@ https://github.com/gau235/prime64/releases/download/free_winX86/prime64Lgpl3Port
 <br/>
 <br/>
 <img
-		src="https://github.com/gau235/prime64/blob/main/prime64UI.png"
-		width="400px"
-		border="0" /> 
-		
+	src="https://github.com/gau235/prime64/blob/main/prime64UI.png"
+	width="400px"
+	border="0" /> 
 <br/>
 
 go with MinePrime from 1 to the number 3 billion:<br/>
