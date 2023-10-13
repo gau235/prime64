@@ -13,7 +13,7 @@ https://github.com/gau235/prime64/releases/download/free_winX86/prime64Lgpl3Port
 <br/>
 <img
 		src="https://github.com/gau235/prime64/blob/main/prime64UI.png"
-		width="350px"
+		width="400px"
 		border="0" /> 
 		
 <br/>
